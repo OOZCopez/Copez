@@ -7,8 +7,6 @@ local Window = Rayfield:CreateWindow({
     LoadingTitle = "COPEZ",
     LoadingSubtitle = "Universal Script Hub",
     ConfigurationSaving = { Enabled = true, FolderName = "CopezHub", FileName = "Settings" }
-
-   },
 })
 
 -- Services
