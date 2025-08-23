@@ -380,22 +380,16 @@ ClientTab:CreateToggle({
     Callback = function(val) waterWalk = val end
 })
 
---------------------------------------------------------
--- ✅ AIM TAB (ESP + Aimbot + Tracers + Ctrl+Click TP)
---------------------------------------------------------
-local AimTab = Window:CreateTab("Aim", nil)
-local Section = AimTab:CreateSection("Features Coming soon!")
-
 
 
 
 
 --------------------------------------------------------
--- ✅ AIM TAB (ESP + Aimbot + Tracers + Ctrl+Click TP)
+-- Other Games
 --------------------------------------------------------
-local othergames = Window:CreateTab("Scripts For Games!", nil)
-    local section = other:CreateSection("More Games Coming!")
-
+local OtherGamesTab = Window:CreateTab("Other Games", 4483362458)
+    local Section = OtherGame:CreateSection("COMING REALLY SOON!")
+-- Table of games and scripts
 
 
 
