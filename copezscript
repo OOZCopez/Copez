@@ -6,7 +6,13 @@ local Window = Rayfield:CreateWindow({
     Name = "COPEZ Universal Hub",
     LoadingTitle = "COPEZ",
     LoadingSubtitle = "Universal Script Hub",
-    ConfigurationSaving = { Enabled = true, FolderName = "CopezHub", FileName = "Settings" }
+    ConfigurationSaving = { Enabled = true, FolderName = "CopezHub", FileName = "Settings" },
+
+        Discord = {
+      Enabled = true, -- Prompt the user to join your Discord server if their executor supports it
+      Invite = "https://discord.gg/kAQqwGuazp", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
 })
 
 -- Services
@@ -377,7 +383,50 @@ ClientTab:CreateToggle({
 --------------------------------------------------------
 -- ✅ AIM TAB (ESP + Aimbot + Tracers + Ctrl+Click TP)
 --------------------------------------------------------
-local AimTab = Window:CreateTab("Aim", 4483362458)
+local AimTab = Window:CreateTab("Aim", nil)
 local Section = AimTab:CreateSection("Features Coming soon!")
+
+
+
+
+
+--------------------------------------------------------
+-- ✅ AIM TAB (ESP + Aimbot + Tracers + Ctrl+Click TP)
+--------------------------------------------------------
+local othergames = Window:CreateTab("Scripts For Games!", nil)
+    local section = other:CreateSection("More Games Coming!")
+
+
+
+
+--------------------------------------------------------
+--  About us
+--------------------------------------------------------
+
+    local AboutusTab = Window:CreateTab("About Us", nil)
+local joindiscord = AboutusTab:CreateSection("Join our Discord!")
+
+AboutusTab:CreateButton({
+    Name = "Copy Discord Link!",
+    Callback = function()
+        local link = "https://discord.gg/kAQqwGuazp"
+        if setclipboard then
+            setclipboard(link)
+            Rayfield:Notify({
+                Title = "Link Copied",
+                Content = "The script link has been copied to your clipboard!",
+                Duration = 3,
+                Image = 4483362458
+            })
+        else
+            Rayfield:Notify({
+                Title = "Error",
+                Content = "Your executor does not support clipboard copying.",
+                Duration = 3,
+                Image = 4483362458
+            })
+        end
+    end
+})
 
 
