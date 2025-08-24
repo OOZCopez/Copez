@@ -52,14 +52,28 @@ MainTab:CreateSlider({
     CurrentValue = 16,
     Callback = function(Value) humanoid.WalkSpeed = Value end
 })
+local JumpSlider = MainTab:CreateSlider({
+    Name = "Jump Height",
+    Range = {50, 300}, -- min and max
+    Increment = 10,
+    Suffix = "Height",
+    CurrentValue = 50,
+    Flag = "JumpSlider",
+    Callback = function(Value)
+        local player = game.Players.LocalPlayer
+        local humanoid = player.Character and player.Character:FindFirstChildOfClass("Humanoid")
 
-MainTab:CreateSlider({
-    Name = "JumpPower",
-    Range = {50, 400},
-    Increment = 5,
-    Suffix = "Power",
-    CurrentValue = humanoid.JumpPower,
-    Callback = function(Value) humanoid.JumpPower = Value end
+        if humanoid then
+            -- Force JumpPower usage (for older executors)
+            if humanoid.UseJumpPower ~= nil then
+                humanoid.UseJumpPower = true
+                humanoid.JumpPower = Value
+            end
+
+            -- Force JumpHeight usage (for updated Roblox)
+            humanoid.JumpHeight = Value / 10
+        end
+    end,
 })
 
 
