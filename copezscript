@@ -53,7 +53,6 @@ MainTab:CreateSlider({
     Callback = function(Value) humanoid.WalkSpeed = Value end
 })
 
--- JumpPower
 MainTab:CreateSlider({
     Name = "JumpPower",
     Range = {50, 400},
@@ -62,6 +61,7 @@ MainTab:CreateSlider({
     CurrentValue = humanoid.JumpPower,
     Callback = function(Value) humanoid.JumpPower = Value end
 })
+
 
 -- Infinite Jump
 local infJump = false
