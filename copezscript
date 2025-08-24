@@ -20,7 +20,8 @@ KeySystem = true,
     Note = "https://h1.nu/17AGT - Key expires every week (globally). ",
     FileName = "KeyCopez",
     SaveKey = true,
-    GrabKeyFromSite = false, -- set true if you use Pastebin/GitHub raw
+    GrabKeyFromSite = false, 
+   Site = "https://link-hub.net/1387086/FojsWn4uAT0R", -- The website to grab the key from
     Key = {"09copez100"} -- your actual working key(s)
 }
 })
@@ -231,6 +232,20 @@ UIS.InputBegan:Connect(function(input)
 end)
    end,
 })
+
+MainTab:CreateToggle({
+    Name = "God Mode",
+    CurrentValue = false,
+    Callback = function(val)
+        if val then
+            humanoid.Health = math.huge
+        else
+            humanoid.Health = 100 -- Reset to default health
+        end
+    end
+})
+
+
 --------------------------------------------------------
 -- ✅ CLIENT-SIDED
 --------------------------------------------------------
@@ -450,13 +465,6 @@ ClientTab:CreateToggle({
 
 
 
-
-
---------------------------------------------------------
--- Other Games
---------------------------------------------------------
-local OtherGamesTab = Window:CreateTab("Other Games", 4483362458)
-    local Section = OtherGame:CreateSection("Games")
 
 
 
