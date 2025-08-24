@@ -13,8 +13,17 @@ local Window = Rayfield:CreateWindow({
       Invite = "https://discord.gg/5BU6xAQwuk", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
+KeySystem = true,
+ KeySettings = {
+    Title = "Key System for the Script",
+    Subtitle = "Only one short checkpoint (30s-1m).",
+    Note = "https://h1.nu/17AvN - KEY LASTS 2 DAYS ",
+    FileName = "KeyCopez",
+    SaveKey = true,
+    GrabKeyFromSite = false, -- set true if you use Pastebin/GitHub raw
+    Key = {"dX1IKMLSzwEN"} -- your actual working key(s)
+}
 })
-
 -- Services
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
@@ -26,6 +35,8 @@ local humanoid = character:WaitForChild("Humanoid")
 local mouse = player:GetMouse()
 local camera = workspace.CurrentCamera
 local Lighting = game:GetService("Lighting")
+
+
 
 --------------------------------------------------------
 -- ✅ MAIN (Server-visible)
@@ -150,13 +161,6 @@ MainTab:CreateToggle({
                 end
             end)
         end
-    end
-})
-MainTab:CreateButton({
-    Name = "Freeze",
-    Callback = function()
-        humanoid.WalkSpeed = 0
-        humanoid.JumpPower = 0
     end
 })
 -- Safety Platform
@@ -438,8 +442,9 @@ ClientTab:CreateToggle({
 -- Other Games
 --------------------------------------------------------
 local OtherGamesTab = Window:CreateTab("Other Games", 4483362458)
-    local Section = OtherGame:CreateSection("COMING REALLY SOON!")
--- Table of games and scripts
+    local Section = OtherGame:CreateSection("Games")
+
+
 
 
 
@@ -472,5 +477,6 @@ AboutusTab:CreateButton({
         end
     end
 })
+
 
 
