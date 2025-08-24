@@ -62,7 +62,32 @@ MainTab:CreateToggle({
 UIS.JumpRequest:Connect(function()
     if infJump then humanoid:ChangeState(Enum.HumanoidStateType.Jumping) end
 end)
+MainTab:CreateToggle({
+    Name = "Auto Heal (may not work on all games)",
+    CurrentValue = false,
+    Callback = function(val)
+        if val then
+            while val do
+                task.wait(2)
+                humanoid.Health = math.min(humanoid.MaxHealth, humanoid.Health + 5)
+            end
+        end
+    end
+})
 
+MainTab:CreateToggle({
+    Name = "No Fall Damage",
+    CurrentValue = false,
+    Callback = function(val)
+        if val then
+            humanoid.StateChanged:Connect(function(_,new)
+                if new == Enum.HumanoidStateType.Freefall then
+                    humanoid:SetStateEnabled(Enum.HumanoidStateType.Freefall, false)
+                end
+            end)
+        end
+    end
+})
 -- Fly toggle
 local flying = false
 local flyBV
@@ -108,7 +133,32 @@ RunService.Stepped:Connect(function()
         end
     end
 end)
-
+MainTab:CreateButton({
+    Name = "Reset Character",
+    Callback = function()
+        humanoid.Health = 0
+    end
+})
+MainTab:CreateToggle({
+    Name = "Wall Climb",
+    CurrentValue = false,
+    Callback = function(val)
+        if val then
+            RunService.RenderStepped:Connect(function()
+                if UIS:IsKeyDown(Enum.KeyCode.Space) and humanoid.MoveDirection.Magnitude > 0 then
+                    hrp.Velocity = hrp.Velocity + Vector3.new(0,50,0)
+                end
+            end)
+        end
+    end
+})
+MainTab:CreateButton({
+    Name = "Freeze",
+    Callback = function()
+        humanoid.WalkSpeed = 0
+        humanoid.JumpPower = 0
+    end
+})
 -- Safety Platform
 local onPlatform = false
 local originalPos
