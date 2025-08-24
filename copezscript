@@ -21,7 +21,7 @@ KeySystem = true,
     FileName = "KeyCopez",
     SaveKey = true,
     GrabKeyFromSite = false, -- set true if you use Pastebin/GitHub raw
-    Key = {"dX1IKMLSzwEN"} -- your actual working key(s)
+    Key = {"09copez100"} -- your actual working key(s)
 }
 })
 -- Services
