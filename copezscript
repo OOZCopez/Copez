@@ -17,12 +17,12 @@ KeySystem = true,
  KeySettings = {
     Title = "Key System for the Script",
     Subtitle = "Only one short checkpoint (30s-1m).",
-    Note = "https://h1.nu/17AGT - Key expires every week (globally). ",
+    Note = "Key in discord (no checkpoints). - Key expires every week (globally). ",
     FileName = "KeyCopez",
     SaveKey = true,
     GrabKeyFromSite = false, 
    Site = "https://link-hub.net/1387086/FojsWn4uAT0R", -- The website to grab the key from
-    Key = {"09copez100"} -- your actual working key(s)
+    Key = {"copezUpdate204"} -- your actual working key(s)
 }
 })
 -- Services
